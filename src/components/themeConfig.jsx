@@ -13,6 +13,7 @@ const ThemeProviderConfig = {
     },
     typography: {
         fontFamily: `"Josefin Sans", Helvetica, Arial, sans-serif`,
+        fontFamilyMono: `"Fira Code", "Courier New", Courier, monospace`,
         h1: { textTransform: "lowercase", fontWeight: "bold", },
         h2: { textTransform: "lowercase", fontWeight: "bold", },
         h3: { textTransform: "lowercase", fontWeight: "bold", },

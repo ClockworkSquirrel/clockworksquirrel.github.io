@@ -6,6 +6,9 @@ import { makeStyles } from "@material-ui/styles"
 import LocationIcon from "@material-ui/icons/LocationOn"
 import { avatarUrl } from "../config.json"
 
+import { view } from "@risingstack/react-easy-state"
+import store from "../store"
+
 const useStyles = makeStyles(theme => ({
     root: {
         width: "100vw",
@@ -96,6 +99,11 @@ const useStyles = makeStyles(theme => ({
 function HeroComponent() {
     const classes = useStyles()
 
+    const onContactButtonClick = evt => {
+        evt.preventDefault()
+        store.methods.scrollToSocialLinks()
+    }
+
     return (
         <Box component="header" className={classes.root}>
             <div className={classes.columnsRoot}>
@@ -124,7 +132,7 @@ function HeroComponent() {
                         I’m Cam (also known as <strong>csqrl</strong> around the internet). I’m a web and Roblox developer and part-time retail sales assistant. I can usually be found tapping away on a phone or keyboard somewhere, with latte in hand. In my spare time, I create apps, games, plugins, packages, products and services <span className={classes.subText}>(oh, I do a little graphic design work too!)</span>.
                     </Typography>
 
-                    <Button variant="contained">
+                    <Button variant="contained" onClick={onContactButtonClick}>
                         Get in Touch
                     </Button>
                 </section>
@@ -135,4 +143,4 @@ function HeroComponent() {
     )
 }
 
-export default HeroComponent
+export default view(HeroComponent)
